@@ -1,0 +1,36 @@
+
+def nextMove(n,r,c,grid):
+    p_i=p_j=0
+    for i in range(n):
+        line = len(grid[i])
+        for j in range(line):
+            if grid[i][j] == 'p':
+                p_i = i
+                p_j = j
+                
+                
+    while(r!=p_i):
+        if(r<p_i):
+            r=r+1
+            return 'DOWN'
+        else:
+            r=r-1
+            return 'UP'
+            
+    while(c!=p_j):
+        if(c<p_j):
+            c=c+1
+            return 'RIGHT'
+        else:
+            c=c-1
+            return 'LEFT'
+            
+ 
+
+n = int(input())
+r,c = [int(i) for i in input().strip().split()]
+grid = []
+for i in range(0, n):
+    grid.append(input())
+
+print(nextMove(n,r,c,grid))
